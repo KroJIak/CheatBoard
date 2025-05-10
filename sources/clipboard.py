@@ -10,7 +10,7 @@ class ClipboardTextSource(ITextSource):
     def get_text(self) -> str:
         pyperclip.copy('')
         pyautogui.hotkey('ctrl', 'c')
-        time.sleep(0.05)
+        time.sleep(0.3)
         text = pyperclip.paste()
         if DEBUG_MODE:
             logging.info(f"Copied text: {text}")
